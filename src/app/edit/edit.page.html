@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+<ion-row>
+      <ion-col>
+<form [formGroup]="register" (ngSubmit)="getdatas()">
+
+<ion-item >
+<ion-label position="floating" >firstname</ion-label>
+<ion-input type="text" formControlName="firstname"></ion-input>
+<div *ngIf="firstname && firstname.touched && firstname.invalid ">firstname is required</div>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating" >lastname</ion-label>
+  <ion-input type="text" formControlName="firstname"></ion-input>
+  <div *ngIf="lastname && lastname.touched && lastname.invalid ">lastname is required</div>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating" >email</ion-label>
+    <ion-input type="email" formControlName="email"></ion-input>
+    <div *ngIf="email && email.touched && email.invalid ">email is required</div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" >password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+      <div *ngIf="password && password.touched && password.invalid ">password is required</div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" >confirm password</ion-label>
+        <ion-input type="password" formControlName="confirmpassword"></ion-input>
+        <div *ngIf="confirmpassword && confirmpassword.touched ">confirmpassword is required</div>
+        </ion-item>
+
+<ion-button  type="submit">update</ion-button>
+
+</form>
+</ion-col>
+
+<ion-col>
+
+
+
+<ion-item>
+
+
+
+
+
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th scope="col">#</th>&nbsp;&nbsp;
+        <th scope="col">Firstname</th>&nbsp;
+        <th scope="col">lastname</th>&nbsp;&nbsp;
+        <th scope="col">email</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        <th scope="col">password</th>&nbsp;&nbsp;
+        <th scope="col">confirmpassword</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of alldata">
+        <td >{{item.id}}</td>&nbsp;&nbsp;
+        <td>{{item.firstname}}</td>&nbsp;
+        <td>{{item.lastname}}</td>&nbsp;&nbsp;
+        <td>{{item.email}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{item.password}}</td>&nbsp;&nbsp;
+        <td>{{item.confirmpassword}}</td>
+
+
+      </tr>
+
+
+    </tbody>
+  </table>
+
+</ion-item>
+
+
+
+
+</ion-col>
+
+</ion-row>
+
+</ion-content>
